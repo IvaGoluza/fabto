@@ -1,5 +1,20 @@
 @import "tailwindcss";
 
+@theme {
+  /* Accent */
+  --color-primary: #0084FF;
+
+  /* Decorate */
+  --color-decorate-blue-light: #93E1F4;
+  --color-decorate-blue: #80C1FF;
+  --color-decorate-blue-dark: #60A5E1;
+
+  /* Backgrounds */
+  --color-surface-blue-light: #F5FDFF;
+  --color-surface-white: #FBFFFF;
+  --color-surface-blue-dark: #4DC5F1;
+}
+
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
