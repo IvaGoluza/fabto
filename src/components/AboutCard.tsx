@@ -11,7 +11,7 @@ export default function AboutCard({ imageName, text }: AboutCardProps) {
         alt="Cleaning hand"
         className="w-20 lg:w-24 hover:animate-pulse"
       />
-      <p className="text-primary text-center text-sm sm:text-base lg:text-lg">
+      <p className="text-primary text-center sm:text-start text-sm sm:text-base lg:text-lg">
         {text}
       </p>
     </div>
