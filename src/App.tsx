@@ -1,4 +1,18 @@
 import { useEffect } from 'react';
+import MapSnippet from './components/MapSnippet.tsx';
+import TextCard from './components/TextCard.tsx';
+import TextWithImageCard from './components/TextWithImageCard.tsx';
+import {
+  deepCleaning,
+  oneTimeCleaning,
+  notes,
+  additionalServices,
+  aboutCards,
+  contactInfoData,
+} from './data';
+import AboutCard from './components/AboutCard.tsx';
+import ContactInfo from './components/ContactInfo.tsx';
+import SectionHeader from './components/SectionHeader.tsx';
 
 function App() {
   useEffect(() => {
@@ -48,7 +62,7 @@ function App() {
           </a>
           <a
             href="#contact"
-            className="uppercase no-underline font-black bg-accent py-2 px-4 rounded-lg"
+            className="uppercase no-underline font-black bg-linear-to-br from-cyan-500 to-blue-500 py-2 px-4 rounded-lg"
           >
             <span className="font-bold text-md sm:text-lg text-white">
               kontakt
@@ -93,8 +107,8 @@ function App() {
                 alt="Cleaning service"
                 className="md:w-sm lg:w-md xl:w-lg rounded-4xl border-12 border-decorate-blue-light drop-shadow-xl"
               />
-              <div className="absolute -top-24 left-1/3 -z-10 w-48 h-48 rounded-full bg-radial-[at_25%_25%] from-white to-decorate-blue to-75% drop-shadow-xl animate-float"></div>
-              <div className="absolute -bottom-16 -left-32 -z-10 w-44 h-44 rounded-full bg-radial-[at_25%_25%] from-white to-decorate-blue-dark to-75% drop-shadow-xl animate-float"></div>
+              <div className="absolute -top-24 left-1/3 -z-10 w-48 h-48 rounded-full bg-radial-[at_65%_25%] from-white to-decorate-blue to-75% drop-shadow-xl animate-float"></div>
+              <div className="absolute -bottom-16 -left-32 -z-10 w-44 h-44 rounded-full bg-radial-[at_65%_25%] from-white to-decorate-blue-dark to-75% drop-shadow-xl animate-float"></div>
             </div>
             <div className="relative">
               <img
@@ -102,269 +116,96 @@ function App() {
                 alt="Cleaning service"
                 className="md:w-lg lg:w-xl xl:w-2xl rounded-4xl border-10 border-decorate-blue drop-shadow-xl"
               />
-              <div className="absolute top-24 -left-24 -z-10 w-36 h-36 rounded-full bg-radial-[at_25%_25%] from-white to-decorate-blue-light to-75% drop-shadow-xl animate-float"></div>
-              <div className="absolute top-8 -left-44 -z-10 w-20 h-20 rounded-full bg-radial-[at_25%_25%] from-white to-decorate-blue-light to-75% drop-shadow-xl animate-float"></div>
+              <div className="absolute top-24 -left-24 -z-10 w-36 h-36 rounded-full bg-radial-[at_65%_25%] from-white to-decorate-blue-light to-75% drop-shadow-xl animate-float"></div>
+              <div className="absolute top-8 -left-44 -z-10 w-20 h-20 rounded-full bg-radial-[at_65%_25%] from-white to-decorate-blue-light to-75% drop-shadow-xl animate-float"></div>
             </div>
           </div>
         </div>
       </div>
       <div
         id="about"
-        className="flex flex-col items-center justify-center gap-12 bg-surface-blue-light py-20 sm:py-48 px-8 sm:px-0"
+        className="flex flex-col items-center justify-center gap-12 bg-surface-blue-light py-20 sm:py-48 sm:px-0"
       >
-        <div className="flex flex-col sm:flex-row items-center justify-start gap-4 sm:gap-8 sm:w-1/2">
-          <img
-            src="/public/images/cleaning-hand.png"
-            alt="Cleaning hand"
-            className="w-20 sm:w-24 hover:animate-pulse"
-          />
-          <p className="text-primary text-center sm:text-start">
-            Naš obrt za čišćenje osnovan je s ciljem da svojim klijentima
-            pružimo pouzdanu, kvalitetnu i fleksibilnu uslugu čišćenja.
-          </p>
-        </div>
-        <div className="flex flex-col sm:flex-row items-center justify-start gap-4 sm:gap-8 sm:w-1/2">
-          <img
-            src="/public/images/home.png"
-            alt="Home"
-            className="w-20 sm:w-24 hover:animate-pulse"
-          />
-          <p className="text-primary text-center sm:text-start">
-            Posvećeni smo detaljima i vjerujemo da čistoća prostora doprinosi
-            boljoj svakodnevici, zdravijem okruženju i ugodnijem boravku.
-          </p>
-        </div>
-        <div className="flex flex-col sm:flex-row items-center justify-start gap-4 sm:gap-8 sm:w-1/2">
-          <img
-            src="/public/images/cleaning-spray.png"
-            alt="Cleaning spray"
-            className="w-20 sm:w-24 hover:animate-pulse"
-          />
-          <p className="text-primary text-center sm:text-start">
-            Specijalizirani smo za generalno i dubinsko čišćenje stanova, kuća i
-            poslovnih prostora, a naš tim koristi provjerene metode i sredstva
-            koja osiguravaju besprijekorne rezultate.
-          </p>
-        </div>
+        {aboutCards.map((card, index) => (
+          <AboutCard key={index} {...card} />
+        ))}
       </div>
       <div
         id="services"
         className="flex flex-col items-start justify-start gap-24 pt-32"
       >
         <div className="flex flex-col items-start justify-start gap-4 sm:gap-8 px-8 sm:pl-32">
-          <div>
-            <h4 className="uppercase text-secondary">usluge</h4>
-            <h2 className="text-xl font-bold text-primary">
-              Jednokratno generalno čišćenje
-            </h2>
-          </div>
+          <SectionHeader
+            subtitle="usluge"
+            title="Jednokratno generalno čišćenje"
+          />
           <div className="flex flex-wrap items-center justify-start sm:gap-4 w-full h-fit">
-            <div className="w-full sm:w-52 flex flex-col justify-start items-start gap-6 p-4 sm:p-6 rounded-bl-xl border-2 sm:border border-l-gray-100 border-b-gray-100 sm:border-gray-100 sm:shadow-md">
-              <div className="flex flex-col justify-start items-start sm:gap-2">
-                <p className="text-xl font-bold text-primary">do 45 m²</p>
-                <p className="text-md text-secondary">
-                  garsonijera, studio s kupaonicom
-                </p>
-              </div>
-              <p className="text-lg sm:text-xl text-accent font-black">
-                95-180 €
-              </p>
-            </div>
-
-            <div className="w-full sm:w-52 flex flex-col justify-start items-start gap-6 p-4 sm:p-6 rounded-r-xl border-2 sm:border border-r-gray-100 border-b-gray-100 sm:border-gray-100 sm:shadow-md">
-              <div className="flex flex-col justify-start items-start sm:gap-2">
-                <p className="text-xl font-bold text-primary">45-90 m²</p>
-                <p className="text-md text-secondary">
-                  2-3 sobe, kuhinja, kupaonica
-                </p>
-              </div>
-              <p className="text-lg sm:text-xl text-accent font-black">
-                180-350 €
-              </p>
-            </div>
-
-            <div className="w-full sm:w-52 flex flex-col justify-start items-start gap-6 p-4 sm:p-6 sm:rounded-xl border-2 sm:border border-b-gray-100 sm:border-gray-100 sm:shadow-md">
-              <div className="flex flex-col justify-start items-start sm:gap-2">
-                <p className="text-xl font-bold text-primary">90-130 m²</p>
-                <p className="text-md text-secondary">
-                  3-4 sobe, kuhinja, više kupaonica
-                </p>
-              </div>
-              <p className="text-lg sm:text-xl text-accent font-black">
-                od 350 €
-              </p>
-            </div>
-
-            <div className="w-full sm:w-52 flex flex-col justify-start items-start gap-6 p-4 sm:p-6 sm:rounded-xl border-2 sm:border border-b-gray-100 sm:border-gray-100 sm:shadow-md">
-              <div className="flex flex-col justify-start items-start sm:gap-2">
-                <p className="text-xl font-bold text-primary">130+ m²</p>
-                <p className="text-md text-secondary">
-                  veći stanovi, kuće, dvoetažni prostori
-                </p>
-              </div>
-              <p className="text-lg sm:text-xl text-accent font-black">
-                od 450 €
-              </p>
-            </div>
+            {oneTimeCleaning.map((card, index) => (
+              <TextCard key={index} {...card} />
+            ))}
           </div>
         </div>
         <div className="w-full sm:w-fit flex flex-col items-start justify-start gap-4 sm:gap-8 px-8 sm:pl-32">
-          <div>
-            <h4 className="uppercase text-secondary">usluge</h4>
-            <h2 className="text-xl font-bold text-primary">
-              Dubinsko čišćenje (po komadu)
-            </h2>
-          </div>
+          <SectionHeader
+            subtitle="usluge"
+            title="Dubinsko čišćenje (po komadu)"
+          />
           <div className="w-full grid grid-cols-1 sm:grid-cols-2 grid-rows-4 sm:gap-3">
-            <div className="h-28 sm:h-42 grid grid-rows-1 grid-cols-3 gap-3 sm:gap-6 sm:rounded-xl border border-b-gray-200 sm:border-gray-100 sm:shadow-md">
-              <img
-                src="/public/images/chair.png"
-                alt="Stolica"
-                className="h-full"
-              />
-              <div className="col-span-2 flex flex-col items-start justify-between py-3 sm:py-8">
-                <p className="uppercase text-md font-semibold text-primary">
-                  stolica
-                </p>
-                <p className="text-lg sm:text-xl text-accent font-black">
-                  od 10 €
-                </p>
-              </div>
-            </div>
-
-            <div className="h-28 sm:h-42 grid grid-rows-1 grid-cols-3 gap-3 sm:gap-6 sm:rounded-xl border border-b-gray-200 sm:border-gray-100 sm:shadow-md">
-              <img
-                src="/public/images/sofa-bed.png"
-                alt="Kauč na razvlačenje"
-                className="h-full"
-              />
-              <div className="col-span-2 flex flex-col items-start justify-between py-3 sm:py-8">
-                <div>
-                  <p className="uppercase text-md font-semibold text-primary">
-                    kauč
-                  </p>
-                  <p className="text-md text-secondary">na razvlačenje</p>
-                </div>
-                <p className="text-lg sm:text-xl text-accent font-black">
-                  od 50 €
-                </p>
-              </div>
-            </div>
-
-            <div className="h-28 sm:h-42 grid grid-rows-1 grid-cols-3 gap-3 sm:gap-6 sm:rounded-xl border border-b-gray-200 sm:border-gray-100 sm:shadow-md">
-              <img
-                src="/public/images/sofa-s.png"
-                alt="Mala sofa"
-                className="h-full"
-              />
-              <div className="col-span-2 flex flex-col items-start justify-between py-3 sm:py-8">
-                <div>
-                  <p className="uppercase text-md font-semibold text-primary">
-                    mala sofa
-                  </p>
-                  <p className="text-md text-secondary">fotelja</p>
-                </div>
-                <p className="text-lg sm:text-xl text-accent font-black">
-                  od 30 €
-                </p>
-              </div>
-            </div>
-
-            <div className="h-28 sm:h-42 grid grid-rows-1 grid-cols-3 gap-3 sm:gap-6 sm:rounded-xl border border-b-gray-200 sm:border-gray-100 sm:shadow-md">
-              <img
-                src="/public/images/sofa-m.png"
-                alt="Velika sofa"
-                className="h-full"
-              />
-              <div className="col-span-2 flex flex-col items-start justify-between py-3 sm:py-8">
-                <div>
-                  <p className="uppercase text-md font-semibold text-primary">
-                    velika sofa
-                  </p>
-                  <p className="text-md text-secondary">3+ sjedeća mjesta</p>
-                </div>
-                <p className="text-lg sm:text-xl text-accent font-black">
-                  od 40 €
-                </p>
-              </div>
-            </div>
-
-            <div className="h-28 sm:h-42 grid grid-rows-1 grid-cols-3 gap-3 sm:gap-6 sm:rounded-xl border border-b-gray-200 sm:border-gray-100 sm:shadow-md">
-              <img
-                src="/public/images/bed-s.png"
-                alt="Jednokrevetni madrac"
-                className="h-full"
-              />
-              <div className="col-span-2 flex flex-col items-start justify-between py-3 sm:py-8">
-                <div>
-                  <p className="uppercase text-md font-semibold text-primary">
-                    madrac
-                  </p>
-                  <p className="text-md text-secondary">jednokrevetni</p>
-                </div>
-                <p className="text-lg sm:text-xl text-accent font-black">
-                  od 30 €
-                </p>
-              </div>
-            </div>
-
-            <div className="h-28 sm:h-42 grid grid-rows-1 grid-cols-3 gap-3 sm:gap-6 sm:rounded-xl border border-b-gray-200 sm:border-gray-100 sm:shadow-md">
-              <img
-                src="/public/images/bed-m.png"
-                alt="Bračni madrac"
-                className="h-full"
-              />
-              <div className="col-span-2 flex flex-col items-start justify-between py-3 sm:py-8">
-                <div>
-                  <p className="uppercase text-md font-semibold text-primary">
-                    madrac
-                  </p>
-                  <p className="text-md text-secondary">bračni</p>
-                </div>
-                <p className="text-lg sm:text-xl text-accent font-black">
-                  od 40 €
-                </p>
-              </div>
-            </div>
-
-            <div className="h-28 sm:h-42 grid grid-rows-1 grid-cols-3 gap-3 sm:gap-6 sm:rounded-xl border border-b-gray-200 sm:border-gray-100 sm:shadow-md">
-              <img
-                src="/public/images/angle-sofa-s.png"
-                alt="Kutna garnitura do 5 sjedala"
-                className="h-full"
-              />
-              <div className="col-span-2 flex flex-col items-start justify-between py-3 sm:py-8">
-                <div>
-                  <p className="uppercase text-md font-semibold text-primary">
-                    kutna garnitura
-                  </p>
-                  <p className="text-md text-secondary">do 5 sjedala</p>
-                </div>
-                <p className="text-lg sm:text-xl text-accent font-black">
-                  od 50 €
-                </p>
-              </div>
-            </div>
-
-            <div className="h-28 sm:h-42 grid grid-rows-1 grid-cols-3 gap-3 sm:gap-6 sm:rounded-xl border border-b-gray-200 sm:border-gray-100 sm:shadow-md">
-              <img
-                src="/public/images/angle-sofa-m.png"
-                alt="Kutna garnitura više od 5 sjedala"
-                className="h-full"
-              />
-              <div className="col-span-2 flex flex-col items-start justify-between py-3 sm:py-8">
-                <div>
-                  <p className="uppercase text-md font-semibold text-primary">
-                    kutna garnitura
-                  </p>
-                  <p className="text-md text-secondary">više od 5 sjedala</p>
-                </div>
-                <p className="text-lg sm:text-xl text-accent font-black">
-                  od 65 €
-                </p>
-              </div>
-            </div>
+            {deepCleaning.map((card, index) => (
+              <TextWithImageCard key={index} {...card} />
+            ))}
           </div>
+        </div>
+        <div className="flex flex-col items-start justify-start gap-4 sm:gap-8 px-8 sm:pl-32">
+          <SectionHeader
+            subtitle="usluge"
+            title="Dodatne usluge (cijena po dogovoru)"
+          />
+          <div className="flex flex-wrap items-center justify-between gap-8 sm:gap-16 h-fit">
+            <ul className="sm:list-disc list-outside lg:text-lg text-primary">
+              {additionalServices.map((item, index) => (
+                <li key={index} className="py-2">
+                  {item}
+                </li>
+              ))}
+            </ul>
+            <img
+              src="/public/images/window-cleaning.jpg"
+              alt="Kutna garnitura do 5 sjedala"
+              className="h-full sm:h-60 rounded-lg"
+            />
+          </div>
+        </div>
+        <div className="flex flex-col items-start justify-start gap-4 sm:gap-8 px-8 py-16 sm:pl-32 w-screen bg-surface-blue-light">
+          <SectionHeader
+            subtitle="napomene"
+            title="Dodatne usluge (cijena po dogovoru)"
+          />
+          <ul className="sm:list-disc list-outside lg:text-lg text-primary sm:w-2/3">
+            {notes.map((item, index) => (
+              <li key={index} className="py-2">
+                {item}
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+      <div
+        id="contact"
+        className="flex flex-col items-start justify-start gap-12 sm:gap-18 px-8 pt-18 p-72 sm:pl-32 w-screen bg-linear-to-br from-cyan-500 to-blue-500"
+      >
+        <h2 className="text-3xl text-surface-white font-bold">Kontakt</h2>
+        <div className="flex flex-wrap gap-24">
+          <div className="flex flex-col gap-4">
+            {contactInfoData.map((item, index) => (
+              <ContactInfo
+                key={index}
+                text={item.text}
+                icon={<i className={item.iconClass}></i>}
+              />
+            ))}
+          </div>
+          <MapSnippet />
         </div>
       </div>
     </div>
