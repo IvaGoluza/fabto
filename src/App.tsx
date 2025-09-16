@@ -44,7 +44,7 @@ function App() {
 
   return (
     <div className="w-screen min-h-screen flex flex-col bg-surface-white  overflow-x-hidden">
-      <div className="fixed top-0 left-0 w-full z-100 flex justify-between items-center py-4 px-6 sm:px-8 bg-surface-white border-3 border-b-gray-50">
+      <div className="fixed top-0 left-0 w-full z-100 flex justify-between items-center py-4 px-6 sm:px-8 bg-surface-white border-b-3 border-b-gray-50">
         <img
           src="/public/images/logo.png"
           alt="Fabto logo"

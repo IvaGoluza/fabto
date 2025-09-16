@@ -11,7 +11,7 @@ export default function TextWithImageCard({
   price,
 }: TextWithImageCardProps) {
   return (
-    <div className="h-32 sm:h-36 grid grid-rows-1 grid-cols-3 sm:gap-6 sm:rounded-xl border border-b-gray-200 sm:border-gray-100 sm:shadow-md">
+    <div className="h-32 sm:h-36 grid grid-rows-1 grid-cols-3 sm:gap-6 sm:rounded-xl border-b-2 sm:border border-gray-100 sm:shadow-md">
       <img
         src={`/public/images/${imageName}.png`}
         alt={`${title} ${description}`}
