@@ -7,7 +7,7 @@ export default function SectionHeader({ subtitle, title }: SectionHeaderProps) {
   return (
     <div>
       <h4 className="uppercase text-secondary">{subtitle}</h4>
-      <h2 className="text-xl font-bold text-primary">{title}</h2>
+      <h2 className="text-xl font-semibold text-primary">{title}</h2>
     </div>
   );
 }

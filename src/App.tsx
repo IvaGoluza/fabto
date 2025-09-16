@@ -52,19 +52,19 @@ function App() {
         />
         <div className="w-2/3 lg:w-1/2 xl:w-1/3 flex items-center justify-end sm:justify-between">
           <a href="#about" className="hidden sm:block uppercase no-underline">
-            <span className="font-bold text-lg text-primary">o nama</span>
+            <span className="font-semibold text-lg text-primary">o nama</span>
           </a>
           <a
             href="#services"
             className="hidden sm:block uppercase no-underline font-black"
           >
-            <span className="font-bold text-lg text-primary">usluge</span>
+            <span className="font-semibold text-lg text-primary">usluge</span>
           </a>
           <a
             href="#contact"
             className="uppercase no-underline font-black bg-linear-to-br from-cyan-500 to-blue-500 py-2 px-4 rounded-lg"
           >
-            <span className="font-bold text-md sm:text-lg text-white">
+            <span className="font-semibold text-md sm:text-lg text-white">
               kontakt
             </span>
           </a>

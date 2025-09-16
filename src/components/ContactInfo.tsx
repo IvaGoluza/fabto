@@ -11,7 +11,7 @@ export default function ContactInfo({ text, icon }: ContactInfoProps) {
       <div className="flex items-center justify-center w-12 h-12 bg-[#5FCBF2] rounded-2xl">
         {icon}
       </div>
-      <p className="text-wrap sm:font-semibold sm:text-lg">{text}</p>
+      <p className="text-wrap sm:text-lg">{text}</p>
     </div>
   );
 }
