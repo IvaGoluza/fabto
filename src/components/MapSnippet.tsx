@@ -16,7 +16,7 @@ const DefaultIcon = L.icon({
 L.Marker.prototype.options.icon = DefaultIcon;
 
 export default function MapSnippet() {
-  const position: LatLngTuple = [45.36966951770743, 14.308640826178506];
+  const position: LatLngTuple = [45.36443913948281, 14.325946046338359];
 
   return (
     <div className="w-full sm:w-[500px] h-64 sm:h-[300px] rounded-lg overflow-hidden shadow-md">
@@ -32,7 +32,7 @@ export default function MapSnippet() {
           subdomains={['a', 'b', 'c', 'd']}
         />
         <Marker position={position}>
-          <Popup>Mihelići 30, Matulji</Popup>
+          <Popup>Matulji</Popup>
         </Marker>
       </MapContainer>
     </div>

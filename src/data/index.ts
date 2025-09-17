@@ -114,6 +114,6 @@ export const contactInfoData: ContactInfoDataItem[] = [
     text: 'fabtocleaningsolutions@gmail.com',
     iconClass: 'fa-solid fa-envelope',
   },
-  { text: 'Mihelići 30, Matulji 51211', iconClass: 'fa-solid fa-location-dot' },
+  { text: 'Matulji 51211, Hrvatska', iconClass: 'fa-solid fa-location-dot' },
   { text: 'fabto.cleaningsolutions', iconClass: 'fa-brands fa-instagram' },
 ];
