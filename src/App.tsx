@@ -48,7 +48,7 @@ function App() {
         <img
           src="/public/images/logo.png"
           alt="Fabto logo"
-          className="w-28 sm:w-36"
+          className="w-28 sm:w-28"
         />
         <div className="w-2/3 lg:w-1/2 xl:w-1/3 flex items-center justify-end sm:justify-between">
           <a href="#about" className="hidden sm:block uppercase no-underline">
@@ -176,7 +176,7 @@ function App() {
             />
           </div>
         </div>
-        <div className="flex flex-col items-start justify-start gap-4 sm:gap-8 px-8 py-16 sm:pl-32 w-screen bg-surface-blue-light">
+        <div className="flex flex-col items-start justify-start gap-4 sm:gap-8 px-8 py-32 sm:pl-32 w-screen bg-surface-blue-light">
           <SectionHeader
             subtitle="napomene"
             title="Dodatne usluge (cijena po dogovoru)"
@@ -192,10 +192,10 @@ function App() {
       </div>
       <div
         id="contact"
-        className="flex flex-col items-start justify-start gap-12 sm:gap-18 px-8 pt-18 p-72 sm:pl-32 w-screen bg-linear-to-br from-cyan-500 to-blue-500"
+        className="flex flex-col items-start justify-start gap-12 sm:gap-18 px-8 py-24 sm:py-42 sm:pl-32 w-screen bg-linear-to-br from-cyan-500 to-blue-500"
       >
         <h2 className="text-3xl text-surface-white font-bold">Kontakt</h2>
-        <div className="flex flex-wrap gap-24">
+        <div className="flex flex-wrap gap-12 sm:gap-24">
           <div className="flex flex-col gap-4">
             {contactInfoData.map((item, index) => (
               <ContactInfo
@@ -207,6 +207,16 @@ function App() {
           </div>
           <MapSnippet />
         </div>
+      </div>
+      <div className="text-white text-sm w-full flex justify-center items-center bg-gradient-to-r from-indigo-500 from-10% via-sky-500 via-30% to-emerald-500 to-90%">
+        © 2025 site by
+        <a
+          href="https://www.linkedin.com/in/ivagoluza"
+          target="_blank"
+          className="pl-1 hover:text-indigo-500"
+        >
+          Iva Goluza <i className="fab fa-linkedin"></i>
+        </a>
       </div>
     </div>
   );
