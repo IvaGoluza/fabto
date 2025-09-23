@@ -17,7 +17,6 @@ import SectionHeader from './components/SectionHeader.tsx';
 function App() {
   useEffect(() => {
     const tool = document.getElementById('tool');
-    const myImage = document.getElementById('phoneCleaningImage');
 
     const handleScrolling = () => {
       const value = window.scrollY;
@@ -27,12 +26,6 @@ function App() {
         const x = -value; // left
         const y = value * 0.5; // down
         tool.style.transform = `translate(${x}px, ${y}px)`;
-      }
-
-      if (myImage) {
-        // Fade in slowly
-        const opacity = Math.min(value / 50, 1);
-        myImage.style.opacity = String(opacity);
       }
     };
 
@@ -70,9 +63,9 @@ function App() {
           </a>
         </div>
       </div>
-      <div className="grid grid-rows-2 grid-cols-1 sm:grid-cols-5 h-[90vh] sm:h-screen pt-24">
+      <div className="flex flex-col sm:grid sm:grid-rows-2 sm:grid-cols-5 sm:h-screen pt-36 sm:pt-24">
         {/* Top-Center Rectangle */}
-        <div className="sm:row-start-1 col-span-1 sm:col-span-2 sm:col-start-2 flex flex-col justify-center items-center sm:items-start gap-6">
+        <div className="sm:row-start-1 sm:col-span-2 sm:col-start-2 flex flex-col justify-center items-center sm:items-start gap-6">
           <p className="text-2xl lg:text-3xl xl:text-4xl font-black sm:font-bold text-accent w-4/5 sm:w-full">
             Profesionalno čišćenje <br /> stanova, kuća i poslovnih prostora
           </p>
@@ -83,29 +76,23 @@ function App() {
         </div>
 
         {/* Bottom-Left Triangle */}
-        <div className="relative row-span-1 row-start-2 col-span-2 col-start-1 flex flex-row justify-start items-end">
+        <div className="hidden relative row-span-1 row-start-2 col-span-2 col-start-1 sm:flex flex-row justify-start items-end">
           <img
             id="tool"
             src="/public/images/cleaning-tool-no-bg.png"
             alt="Cleaning service"
             className="w-xs lg:w-sm xl:w-lg absolute z-90"
           />
-          <img
-            id="phoneCleaningImage"
-            src="/public/images/people-cleaning.jpg"
-            alt="Cleaning service"
-            className="absolute top-0 -right-6 opacity-0 transition-opacity duration-500 w-4/5 sm:hidden rounded-4xl border-8 border-decorate-blue-light drop-shadow-xl"
-          />
         </div>
 
         {/* Bottom-Right Polygon */}
-        <div className="hidden sm:flex row-span-2 col-span-3 col-start-3 justify-end items-end transform translate-x-32 translate-y-24">
+        <div className="py-28 sm:py-0 sm:row-span-2 sm:col-span-3 sm:col-start-3 flex justify-end items-end transform translate-x-32 sm:translate-y-24">
           <div className="flex flex-col items-end gap-4 -rotate-12">
             <div className="relative">
               <img
                 src="/public/images/people-cleaning.jpg"
                 alt="Cleaning service"
-                className="md:w-sm lg:w-md xl:w-lg rounded-4xl border-12 border-decorate-blue-light drop-shadow-xl"
+                className="w-sm lg:w-md xl:w-lg rounded-4xl border-12 border-decorate-blue-light drop-shadow-xl"
               />
               <div className="absolute -top-24 left-1/3 -z-10 w-48 h-48 rounded-full bg-radial-[at_65%_25%] from-white to-decorate-blue to-75% drop-shadow-xl animate-float"></div>
               <div className="absolute -bottom-16 -left-32 -z-10 w-44 h-44 rounded-full bg-radial-[at_65%_25%] from-white to-decorate-blue-dark to-75% drop-shadow-xl animate-float"></div>
@@ -114,7 +101,7 @@ function App() {
               <img
                 src="/public/images/vacuum.jpg"
                 alt="Cleaning service"
-                className="md:w-lg lg:w-xl xl:w-2xl rounded-4xl border-10 border-decorate-blue drop-shadow-xl"
+                className="w-lg lg:w-xl xl:w-2xl rounded-4xl border-10 border-decorate-blue drop-shadow-xl"
               />
               <div className="absolute top-24 -left-24 -z-10 w-36 h-36 rounded-full bg-radial-[at_65%_25%] from-white to-decorate-blue-light to-75% drop-shadow-xl animate-float"></div>
               <div className="absolute top-8 -left-44 -z-10 w-20 h-20 rounded-full bg-radial-[at_65%_25%] from-white to-decorate-blue-light to-75% drop-shadow-xl animate-float"></div>
@@ -171,7 +158,7 @@ function App() {
             </ul>
             <img
               src="/public/images/window-cleaning.jpg"
-              alt="Kutna garnitura do 5 sjedala"
+              alt="Window Cleaning"
               className="h-full sm:h-60 rounded-lg"
             />
           </div>
@@ -208,8 +195,8 @@ function App() {
           <MapSnippet />
         </div>
       </div>
-      <div className="text-white text-sm w-full flex justify-center items-center bg-gradient-to-r from-indigo-500 from-10% via-sky-500 via-30% to-emerald-500 to-90%">
-        © 2025 site by
+      <div className="text-white text-sm w-full flex justify-center items-center bg-gradient-to-r from-indigo-500 via-sky-500 to-indigo-500">
+        2025 © Designed & developed by
         <a
           href="https://www.linkedin.com/in/ivagoluza"
           target="_blank"
