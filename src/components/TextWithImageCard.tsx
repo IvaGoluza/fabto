@@ -13,7 +13,7 @@ export default function TextWithImageCard({
   return (
     <div className="h-32 sm:h-36 grid grid-rows-1 grid-cols-3 sm:gap-6 sm:rounded-xl border-b-2 sm:border border-gray-100 sm:shadow-md">
       <img
-        src={`/public/images/${imageName}.png`}
+        src={`/images/${imageName}.png`}
         alt={`${title} ${description}`}
         className="h-full"
       />
