@@ -145,7 +145,6 @@ function App() {
         </div>
         <div className="flex flex-col items-start justify-start gap-4 sm:gap-8 px-8 sm:px-0 lg:w-3/5">
           <SectionHeader
-            subtitle="usluge"
             title="Dodatne usluge (cijena po dogovoru)"
           />
           <div className="flex flex-wrap w-full items-center justify-between gap-8 sm:gap-16 h-fit">
@@ -167,7 +166,6 @@ function App() {
           <div className="flex flex-col items-start justify-start gap-4 sm:gap-8 lg:w-3/5">
             <SectionHeader
               subtitle="napomene"
-              title="Dodatne usluge (cijena po dogovoru)"
             />
             <ul className="sm:list-disc list-outside lg:text-lg text-primary">
               {notes.map((item, index) => (
