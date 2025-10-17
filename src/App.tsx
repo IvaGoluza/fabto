@@ -39,7 +39,7 @@ function App() {
     <div className="w-screen min-h-screen flex flex-col bg-surface-white  overflow-x-hidden">
       <div className="fixed top-0 left-0 w-full z-100 flex justify-between items-center py-4 px-6 sm:px-8 bg-surface-white border-b-3 border-b-gray-50">
         <img
-          src="/public/images/logo.png"
+          src="/images/logo.png"
           alt="Fabto logo"
           className="w-28 sm:w-28"
         />
@@ -79,7 +79,7 @@ function App() {
         <div className="hidden relative row-span-1 row-start-2 col-span-2 col-start-1 sm:flex flex-row justify-start items-end">
           <img
             id="tool"
-            src="/public/images/cleaning-tool-no-bg.png"
+            src="/images/cleaning-tool-no-bg.png"
             alt="Cleaning service"
             className="w-xs lg:w-sm xl:w-lg absolute z-90"
           />
@@ -90,7 +90,7 @@ function App() {
           <div className="flex flex-col items-end gap-4 -rotate-12">
             <div className="relative">
               <img
-                src="/public/images/people-cleaning.jpg"
+                src="/images/people-cleaning.jpg"
                 alt="Cleaning service"
                 className="w-sm lg:w-md xl:w-lg rounded-4xl border-12 border-decorate-blue-light drop-shadow-xl"
               />
@@ -99,7 +99,7 @@ function App() {
             </div>
             <div className="relative">
               <img
-                src="/public/images/vacuum.jpg"
+                src="/images/vacuum.jpg"
                 alt="Cleaning service"
                 className="w-lg lg:w-xl xl:w-2xl rounded-4xl border-10 border-decorate-blue drop-shadow-xl"
               />
@@ -119,9 +119,9 @@ function App() {
       </div>
       <div
         id="services"
-        className="flex flex-col items-start justify-start gap-24 pt-32"
+        className="flex flex-col items-center justify-start gap-24 pt-32"
       >
-        <div className="flex flex-col items-start justify-start gap-4 sm:gap-8 px-8 sm:pl-32">
+        <div className="flex flex-col items-start justify-start gap-4 sm:gap-8 px-8 sm:px-0">
           <SectionHeader
             subtitle="usluge"
             title="Jednokratno generalno čišćenje"
@@ -132,7 +132,7 @@ function App() {
             ))}
           </div>
         </div>
-        <div className="w-full sm:w-fit flex flex-col items-start justify-start gap-4 sm:gap-8 px-8 sm:pl-32">
+        <div className="w-full sm:w-fit flex flex-col items-start justify-start gap-4 sm:gap-8 px-8 sm:px-0">
           <SectionHeader
             subtitle="usluge"
             title="Dubinsko čišćenje (po komadu)"
@@ -143,12 +143,12 @@ function App() {
             ))}
           </div>
         </div>
-        <div className="flex flex-col items-start justify-start gap-4 sm:gap-8 px-8 sm:pl-32">
+        <div className="flex flex-col items-start justify-start gap-4 sm:gap-8 px-8 sm:px-0 lg:w-3/5">
           <SectionHeader
             subtitle="usluge"
             title="Dodatne usluge (cijena po dogovoru)"
           />
-          <div className="flex flex-wrap items-center justify-between gap-8 sm:gap-16 h-fit">
+          <div className="flex flex-wrap w-full items-center justify-between gap-8 sm:gap-16 h-fit">
             <ul className="sm:list-disc list-outside lg:text-lg text-primary">
               {additionalServices.map((item, index) => (
                 <li key={index} className="py-2">
@@ -157,42 +157,46 @@ function App() {
               ))}
             </ul>
             <img
-              src="/public/images/window-cleaning.jpg"
+              src="/images/window-cleaning.jpg"
               alt="Window Cleaning"
               className="h-full sm:h-60 rounded-lg"
             />
           </div>
         </div>
-        <div className="flex flex-col items-start justify-start gap-4 sm:gap-8 px-8 py-32 sm:pl-32 w-screen bg-surface-blue-light">
-          <SectionHeader
-            subtitle="napomene"
-            title="Dodatne usluge (cijena po dogovoru)"
-          />
-          <ul className="sm:list-disc list-outside lg:text-lg text-primary sm:w-2/3">
-            {notes.map((item, index) => (
-              <li key={index} className="py-2">
-                {item}
-              </li>
-            ))}
-          </ul>
+        <div className="flex justify-center items-center px-8 sm:px-0 py-32 w-screen bg-surface-blue-light">
+          <div className="flex flex-col items-start justify-start gap-4 sm:gap-8 lg:w-3/5">
+            <SectionHeader
+              subtitle="napomene"
+              title="Dodatne usluge (cijena po dogovoru)"
+            />
+            <ul className="sm:list-disc list-outside lg:text-lg text-primary">
+              {notes.map((item, index) => (
+                <li key={index} className="py-2">
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </div>
       <div
         id="contact"
-        className="flex flex-col items-start justify-start gap-12 sm:gap-18 px-8 py-24 sm:py-42 sm:pl-32 w-screen bg-linear-to-br from-cyan-500 to-blue-500"
+        className="flex items-center justify-center px-8 sm:px-0 py-24 sm:py-42 w-screen bg-linear-to-br from-cyan-500 to-blue-500"
       >
-        <h2 className="text-3xl text-surface-white font-bold">Kontakt</h2>
-        <div className="flex flex-wrap gap-12 sm:gap-24">
-          <div className="flex flex-col gap-4">
-            {contactInfoData.map((item, index) => (
-              <ContactInfo
-                key={index}
-                text={item.text}
-                icon={<i className={item.iconClass}></i>}
-              />
-            ))}
+        <div className="flex flex-col items-start justify-start gap-12 sm:gap-18">
+          <h2 className="text-3xl text-surface-white font-bold">Kontakt</h2>
+          <div className="flex flex-wrap gap-12 sm:gap-24">
+            <div className="flex flex-col gap-4">
+              {contactInfoData.map((item, index) => (
+                <ContactInfo
+                  key={index}
+                  text={item.text}
+                  icon={<i className={item.iconClass}></i>}
+                />
+              ))}
+            </div>
+            <MapSnippet />
           </div>
-          <MapSnippet />
         </div>
       </div>
       <div className="text-white text-sm w-full flex justify-center items-center bg-gradient-to-r from-indigo-500 via-sky-500 to-indigo-500">
