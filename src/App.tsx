@@ -7,7 +7,9 @@ import {
   oneTimeCleaning,
   notes,
   additionalServices,
+  faq,
   aboutCards,
+  descriptors,
   contactInfoData,
 } from './data';
 import AboutCard from './components/AboutCard.tsx';
@@ -38,11 +40,7 @@ function App() {
   return (
     <div className="w-screen min-h-screen flex flex-col bg-surface-white  overflow-x-hidden">
       <div className="fixed top-0 left-0 w-full z-100 flex justify-between items-center py-4 px-6 sm:px-8 bg-surface-white border-b-3 border-b-gray-50">
-        <img
-          src="/images/logo.png"
-          alt="Fabto logo"
-          className="w-28 sm:w-28"
-        />
+        <img src="/images/logo.png" alt="Fabto logo" className="w-28 sm:w-28" />
         <div className="w-2/3 lg:w-1/2 xl:w-1/3 flex items-center justify-end sm:justify-between">
           <a href="#about" className="hidden sm:block uppercase no-underline">
             <span className="font-semibold text-lg text-primary">o nama</span>
@@ -65,13 +63,17 @@ function App() {
       </div>
       <div className="flex flex-col sm:grid sm:grid-rows-2 sm:grid-cols-5 sm:h-screen pt-36 sm:pt-24">
         {/* Top-Center Rectangle */}
-        <div className="sm:row-start-1 sm:col-span-2 sm:col-start-2 flex flex-col justify-center items-center sm:items-start gap-6">
+        <div className="sm:row-start-1 sm:col-span-2 sm:col-start-2 flex flex-col justify-center items-center sm:items-start gap-2 sm:transform sm:translate-x-20">
+          <p className="text-accent w-4/5 sm:w-full">
+            <i className="fa-solid fa-location-dot"></i>
+            Matulji, Rijeka, Opatija i okolica
+          </p>
           <p className="text-2xl lg:text-3xl xl:text-4xl font-black sm:font-bold text-accent w-4/5 sm:w-full">
-            Profesionalno čišćenje <br /> stanova, kuća i poslovnih prostora
+            Generalno, parno i dubinsko čišćenje prostora s garancijom kvalitete
           </p>
           <p className="md:text-md lg:text-lg xl:text-xl w-4/5 text-primary">
-            Pouzdana usluga i besprijekorni rezultati - za dom i ured u kojem je
-            užitak boraviti.
+            Pouzdane usluge čišćenja domova, poslovnih prostora i apartmana,
+            prilagođene vašim potrebama
           </p>
         </div>
 
@@ -111,43 +113,57 @@ function App() {
       </div>
       <div
         id="about"
-        className="flex flex-col items-center justify-center gap-12 bg-surface-blue-light py-20 sm:py-48 sm:px-0"
+        className="flex flex-col items-center justify-center gap-14 bg-surface-blue-light py-20 sm:py-48"
       >
         {aboutCards.map((card, index) => (
           <AboutCard key={index} {...card} />
         ))}
       </div>
+      <div className="flex flex-col justify-center items-center px-8 sm:px-0 py-24 w-screen bg-gradient-to-tr from-sky-800 via-sky-500 to-sky-800">
+        <p className="text-white/70 uppercase text-sm w-full lg:w-4/5 xl:w-3/5 2xl:w-1/2 m-auto">
+          Mali detalji koji čine veliku razliku
+          <i className="fa-solid fa-heart"></i>
+        </p>
+        <div className="grid grid-cols-1 sm:grid-cols-4 gap-2 sm:gap-4 w-full lg:w-4/5 xl:w-3/5 2xl:w-1/2 m-auto pt-2 sm:pt-4 border-t-2 border-white/50">
+          {descriptors.map((descriptor, index) => (
+            <div
+              key={index}
+              className="flex items-center justify-center text-center py-3 sm:py-6 px-6 rounded-xl lowercase text-base lg:text-xl text-white bg-white/10"
+            >
+              {descriptor}
+            </div>
+          ))}
+        </div>
+      </div>
       <div
         id="services"
-        className="flex flex-col items-center justify-start gap-24 pt-32"
+        className="flex flex-col items-center justify-start gap-24 pt-32 w-full lg:w-4/5 xl:w-3/5 2xl:w-1/2 m-auto"
       >
-        <div className="flex flex-col items-start justify-start gap-4 sm:gap-8 px-8 sm:px-0">
+        <div className="flex flex-col items-start justify-start gap-4 sm:gap-8 px-8 sm:px-0 w-full">
           <SectionHeader
             subtitle="usluge"
             title="Jednokratno generalno čišćenje"
           />
-          <div className="flex flex-wrap items-center justify-start sm:gap-4 w-full h-fit">
+          <div className="grid grid-cols-1 sm:grid-cols-4 items-center justify-start sm:gap-4 w-full h-fit">
             {oneTimeCleaning.map((card, index) => (
               <TextCard key={index} {...card} />
             ))}
           </div>
         </div>
-        <div className="w-full sm:w-fit flex flex-col items-start justify-start gap-4 sm:gap-8 px-8 sm:px-0">
+        <div className="flex flex-col items-start justify-start gap-4 sm:gap-8 px-8 sm:px-0 w-full">
           <SectionHeader
             subtitle="usluge"
             title="Dubinsko čišćenje (po komadu)"
           />
-          <div className="w-full grid grid-cols-1 sm:grid-cols-2 grid-rows-4 sm:gap-3">
+          <div className="grid grid-cols-1 sm:grid-cols-2 grid-rows-4 sm:gap-3 w-full">
             {deepCleaning.map((card, index) => (
               <TextWithImageCard key={index} {...card} />
             ))}
           </div>
         </div>
-        <div className="flex flex-col items-start justify-start gap-4 sm:gap-8 px-8 sm:px-0 lg:w-3/5">
-          <SectionHeader
-            title="Dodatne usluge (cijena po dogovoru)"
-          />
-          <div className="flex flex-wrap w-full items-center justify-between gap-8 sm:gap-16 h-fit">
+        <div className="flex flex-col items-start justify-start gap-4 sm:gap-8 px-8 sm:px-0 w-full">
+          <SectionHeader subtitle="Dodatne usluge (cijena po dogovoru)" />
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 sm:gap-16 w-full">
             <ul className="sm:list-disc list-outside lg:text-lg text-primary">
               {additionalServices.map((item, index) => (
                 <li key={index} className="py-2">
@@ -158,19 +174,29 @@ function App() {
             <img
               src="/images/window-cleaning.jpg"
               alt="Window Cleaning"
-              className="h-full sm:h-60 rounded-lg"
+              className="rounded-xl"
             />
           </div>
         </div>
-        <div className="flex justify-center items-center px-8 sm:px-0 py-32 w-screen bg-surface-blue-light">
-          <div className="flex flex-col items-start justify-start gap-4 sm:gap-8 lg:w-3/5">
-            <SectionHeader
-              subtitle="napomene"
-            />
-            <ul className="sm:list-disc list-outside lg:text-lg text-primary">
-              {notes.map((item, index) => (
+        <div className="flex flex-col items-start justify-start gap-4 sm:gap-8 px-8 sm:px-0 w-full">
+          <SectionHeader subtitle="napomene" />
+          <ul className="sm:list-disc list-outside lg:text-lg text-primary">
+            {notes.map((item, index) => (
+              <li key={index} className="py-2">
+                {item}
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div className="flex justify-center items-center px-8 sm:px-0 py-20 w-screen bg-surface-blue-light">
+          <div className="flex flex-col items-start justify-start gap-4 sm:gap-8 w-full lg:w-4/5 xl:w-3/5 2xl:w-1/2 m-auto">
+            <SectionHeader subtitle="Česta pitanja" />
+            <ul className="list lg:text-lg text-primary">
+              {faq.map((item, index) => (
                 <li key={index} className="py-2">
-                  {item}
+                  <b>{item.question}</b>
+                  <br />
+                  {item.answer}
                 </li>
               ))}
             </ul>
@@ -181,9 +207,9 @@ function App() {
         id="contact"
         className="flex items-center justify-center px-8 sm:px-0 py-24 sm:py-42 w-screen bg-linear-to-br from-cyan-500 to-blue-500"
       >
-        <div className="flex flex-col items-start justify-start gap-12 sm:gap-18">
+        <div className="flex flex-col items-start justify-start gap-12 sm:gap-18 w-full lg:w-4/5 xl:w-3/5 2xl:w-1/2 m-auto">
           <h2 className="text-3xl text-surface-white font-bold">Kontakt</h2>
-          <div className="flex flex-wrap gap-12 sm:gap-24">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-12 sm:gap-0 w-full">
             <div className="flex flex-col gap-4">
               {contactInfoData.map((item, index) => (
                 <ContactInfo

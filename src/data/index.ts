@@ -6,16 +6,30 @@ import type { ContactInfoProps } from '../components/ContactInfo.tsx';
 export const aboutCards: AboutCardProps[] = [
   {
     imageName: 'cleaning-hand',
-    text: 'Naš obrt za čišćenje osnovan je s ciljem da svojim klijentima pružimo pouzdanu, kvalitetnu i fleksibilnu uslugu čišćenja.',
+    text: 'Dobrodošli na FabTo Cleaning Solutions – specijalizirani obrt za dubinsko čišćenje interijera. Naš cilj nije samo čišćenje površine, već obnova higijene i kvalitete života u vašem prostoru.',
   },
   {
     imageName: 'home',
-    text: 'Posvećeni smo detaljima i vjerujemo da čistoća prostora doprinosi boljoj svakodnevici, zdravijem okruženju i ugodnijem boravku.',
+    text: 'Koristimo profesionalnu opremu i certificirana ekološki prihvatljiva sredstva koja učinkovito uklanjaju dubinske nečistoće, a istovremeno su sigurna za djecu, alergičare i kućne ljubimce.',
   },
   {
     imageName: 'cleaning-spray',
-    text: 'Specijalizirani smo za generalno i dubinsko čišćenje stanova, kuća i poslovnih prostora, a naš tim koristi provjerene metode i sredstva koja osiguravaju besprijekorne rezultate.',
+    text:
+      'Visoke temperature pare dezinficiraju površine, smanjujući rizik od infekcija i\n' +
+      'alergijskih reakcija. Ekstrakcijski uređaji osiguravaju uklanjanje svih preostalih\n' +
+      'mikroorganizama i alergena.',
   },
+];
+
+export const descriptors: string[] = [
+  'Sigurna sredstva',
+  'Profesionalna oprema',
+  'Brza dostupnost termina',
+  'Potpuna posvećenost svakom klijentu',
+  'Dolazak na lokaciju bez dodatnih troškova',
+  'Zagarantirani rezultati',
+  'Transparentne cijene',
+  'Specijalizirani za dubinsko čišćenje',
 ];
 
 export const oneTimeCleaning: TextCardProps[] = [
@@ -104,6 +118,37 @@ export const notes: string[] = [
   'U cijenu je uključeno temeljito usisavanje, parno čišćenje te ekstrakcija - ispiranje tkanine i uklanjanje nečistoća za svjež i higijenski čist rezultat',
 ];
 
+type FaqItem = {
+  question: string;
+  answer: string;
+};
+
+export const faq: FaqItem[] = [
+  {
+    question: 'Koliko traje sušenje nakon dubinskog čišćenja?',
+    answer:
+      'Idealno vrijeme sušenja je 24 sata. U nekim slučajevima to može biti i kraće. Prostor treba biti prozračan, klimatiziran i u zimskim uvjetima zagrijan kako biste ubrzali sušenje.',
+  },
+  {
+    question: 'Koristite li kemikalije koje su štetne?',
+    answer:
+      'Ne. Koristimo certificirana ekološki prihvatljiva sredstva sigurna za djecu, alergičare i kućne ljubimce.',
+  },
+  {
+    question: 'Naplaćujete li dolazak?',
+    answer: 'Dolazak na lokaciju u Matuljima i okolici je uključen u cijenu.',
+  },
+  {
+    question: 'Imate li minimalni iznos za narudžbu?',
+    answer:
+      'Da, minimalni iznos izlaska na teren je 60 €. Time osiguravamo da svaki dolazak bude izveden s punom profesionalnom pripremom, opremom i učinkom, bez kompromisa na kvaliteti usluge.',
+  },
+  {
+    question: 'Mogu li dobiti R1 račun?',
+    answer: 'Da, izdavanje R1 računa je dostupno na zahtjev.',
+  },
+];
+
 type ContactInfoDataItem = Omit<ContactInfoProps, 'icon'> & {
   iconClass: string;
 };
@@ -115,5 +160,5 @@ export const contactInfoData: ContactInfoDataItem[] = [
     iconClass: 'fa-solid fa-envelope',
   },
   { text: 'Matulji 51211, Hrvatska', iconClass: 'fa-solid fa-location-dot' },
-  { text: 'fabto.cleaningsolutions', iconClass: 'fa-brands fa-instagram' },
+  { text: 'fabto.ciscenje', iconClass: 'fa-brands fa-instagram' },
 ];

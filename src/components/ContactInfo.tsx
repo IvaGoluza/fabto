@@ -8,7 +8,7 @@ export type ContactInfoProps = {
 export default function ContactInfo({ text, icon }: ContactInfoProps) {
   return (
     <div className="flex items-center gap-4 text-surface-white">
-      <div className="flex items-center justify-center w-12 h-12 bg-[#5FCBF2] rounded-2xl">
+      <div className="flex items-center justify-center w-12 h-12 bg-white/20 rounded-2xl">
         {icon}
       </div>
       <p className="text-wrap sm:text-lg">{text}</p>

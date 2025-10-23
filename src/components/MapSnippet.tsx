@@ -19,7 +19,7 @@ export default function MapSnippet() {
   const position: LatLngTuple = [45.36443913948281, 14.325946046338359];
 
   return (
-    <div className="w-full sm:w-[500px] h-64 sm:h-[300px] rounded-lg overflow-hidden shadow-md">
+    <div className="w-full h-64 sm:h-[300px] rounded-lg overflow-hidden shadow-md">
       <MapContainer
         center={position}
         zoom={13}
