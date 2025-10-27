@@ -17,14 +17,14 @@ export default function TextWithImageCard({
         alt={`${title} ${description}`}
         className="h-full"
       />
-      <div className="col-span-2 flex flex-col items-start justify-between py-4 sm:py-6">
+      <div className="text-base xl:text-lg col-span-2 flex flex-col items-start justify-between py-4 sm:py-6">
         <div>
-          <p className="uppercase text-base font-semibold text-primary">
+          <p className="uppercase text-base lg:text-lg font-semibold text-primary">
             {title}
           </p>
           {description && <p className="text-secondary">{description}</p>}
         </div>
-        <p className="text-base sm:text-xl text-accent font-bold sm:font-black">
+        <p className="text-base sm:text-lg xl:text-xl text-accent font-bold sm:font-black">
           {price}
         </p>
       </div>
