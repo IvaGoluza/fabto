@@ -17,7 +17,7 @@ export default function TextWithImageCard({
         alt={`${title} ${description}`}
         className="h-full"
       />
-      <div className="text-base xl:text-lg col-span-2 flex flex-col items-start justify-between py-4 sm:py-6">
+      <div className="text-base xl:text-md col-span-2 flex flex-col items-start justify-between py-4 sm:py-6">
         <div>
           <p className="uppercase text-base lg:text-lg font-semibold text-primary">
             {title}

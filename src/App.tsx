@@ -119,8 +119,8 @@ function App() {
           <AboutCard key={index} {...card} />
         ))}
       </div>
-      <div className="flex flex-col justify-center items-center px-8 sm:px-0 py-24 w-screen bg-gradient-to-tr from-sky-800 via-sky-500 to-sky-800">
-        <p className="text-white/70 uppercase text-sm w-full lg:w-4/5 xl:w-3/5 2xl:w-1/2 m-auto">
+      <div className="flex flex-col justify-center items-center px-8 lg:px-0 py-24 w-screen bg-gradient-to-tr from-sky-800 via-sky-500 to-sky-800">
+        <p className="text-white/70 uppercase text-sm xl:text-base w-full lg:w-4/5 xl:w-3/5 2xl:w-1/2 m-auto">
           Mali detalji koji čine veliku razliku
           <i className="fa-solid fa-heart"></i>
         </p>
@@ -128,7 +128,7 @@ function App() {
           {descriptors.map((descriptor, index) => (
             <div
               key={index}
-              className="flex items-center justify-center text-center py-3 sm:py-6 px-6 rounded-xl lowercase text-base lg:text-xl text-white bg-white/10"
+              className="flex items-center justify-center text-center py-3 sm:py-6 px-6 rounded-xl lowercase text-base lg:text-md xl:text-lg text-white bg-white/10"
             >
               {descriptor}
             </div>
@@ -137,7 +137,7 @@ function App() {
       </div>
       <div
         id="services"
-        className="flex flex-col items-center justify-start gap-24 pt-32 w-full lg:w-4/5 xl:w-3/5 2xl:w-1/2 m-auto"
+        className="flex flex-col items-center justify-start gap-24 pt-32 px-0 sm:px-8 w-full lg:w-4/5 xl:w-3/5 2xl:w-1/2 m-auto"
       >
         <div className="flex flex-col items-start justify-start gap-4 sm:gap-8 px-8 sm:px-0 w-full">
           <SectionHeader
@@ -155,7 +155,7 @@ function App() {
             subtitle="usluge"
             title="Dubinsko čišćenje (po komadu)"
           />
-          <div className="grid grid-cols-1 sm:grid-cols-2 grid-rows-4 sm:gap-3 w-full">
+          <div className="grid grid-cols-1 sm:grid-cols-2 grid-rows-4 sm:gap-4 w-full">
             {deepCleaning.map((card, index) => (
               <TextWithImageCard key={index} {...card} />
             ))}
@@ -164,9 +164,9 @@ function App() {
         <div className="flex flex-col items-start justify-start gap-4 sm:gap-8 px-8 sm:px-0 w-full">
           <SectionHeader subtitle="Dodatne usluge (cijena po dogovoru)" />
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 sm:gap-16 w-full">
-            <ul className="sm:list-disc list-outside lg:text-lg text-primary">
+            <ul className="lg:list-disc list-outside lg:text-lg text-primary">
               {additionalServices.map((item, index) => (
-                <li key={index} className="py-2">
+                <li key={index} className="py-2 sm:font-semibold">
                   {item}
                 </li>
               ))}
@@ -180,7 +180,7 @@ function App() {
         </div>
         <div className="flex flex-col items-start justify-start gap-4 sm:gap-8 px-8 sm:px-0 w-full">
           <SectionHeader subtitle="napomene" />
-          <ul className="sm:list-disc list-outside lg:text-lg text-primary">
+          <ul className="lg:list-disc list-outside lg:text-lg text-primary">
             {notes.map((item, index) => (
               <li key={index} className="py-2">
                 {item}
@@ -188,10 +188,10 @@ function App() {
             ))}
           </ul>
         </div>
-        <div className="flex justify-center items-center px-8 sm:px-0 py-20 w-screen bg-surface-blue-light">
+        <div className="flex justify-center items-center px-8 lg:px-0 py-20 w-screen bg-surface-blue-light">
           <div className="flex flex-col items-start justify-start gap-4 sm:gap-8 w-full lg:w-4/5 xl:w-3/5 2xl:w-1/2 m-auto">
             <SectionHeader subtitle="Česta pitanja" />
-            <ul className="list lg:text-lg text-primary">
+            <ul className="list lg:text-lg text-primary flex flex-col gap-4">
               {faq.map((item, index) => (
                 <li key={index} className="py-2">
                   <b>{item.question}</b>
@@ -205,7 +205,7 @@ function App() {
       </div>
       <div
         id="contact"
-        className="flex items-center justify-center px-8 sm:px-0 py-24 sm:py-42 w-screen bg-linear-to-br from-cyan-500 to-blue-500"
+        className="flex items-center justify-center px-4 xs:px-8 lg:px-0 py-24 sm:py-42 w-screen bg-linear-to-br from-cyan-500 to-blue-500"
       >
         <div className="flex flex-col items-start justify-start gap-12 sm:gap-18 w-full lg:w-4/5 xl:w-3/5 2xl:w-1/2 m-auto">
           <h2 className="text-3xl text-surface-white font-bold">Kontakt</h2>

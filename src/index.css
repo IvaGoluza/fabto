@@ -18,6 +18,9 @@
   --color-primary: #4A4F5B;
   --color-secondary: #858585;
 
+  /* Breakpoints */
+  --breakpoint-xs: 25rem;
+
   --animate-float: float 4s ease-in-out infinite;
 
   @keyframes float {
