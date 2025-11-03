@@ -156,7 +156,7 @@ type ContactInfoDataItem = Omit<ContactInfoProps, 'icon'> & {
 export const contactInfoData: ContactInfoDataItem[] = [
   { text: '+385 97 6767 601', iconClass: 'fa-solid fa-phone' },
   {
-    text: 'fabtocleaningsolutions@gmail.com',
+    text: 'fabto.ciscenje@gmail.com',
     iconClass: 'fa-solid fa-envelope',
   },
   { text: 'Matulji 51211, Hrvatska', iconClass: 'fa-solid fa-location-dot' },
